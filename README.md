@@ -9,6 +9,15 @@ You can find them all in [snippets](https://github.com/Oczko24/Obsidian_things/t
 - **Accent everywhere** - makes accent in every line or so
 - **Transparent tables** - makes tables tranaparent 
 - **Canvas dots** - removes visibility of background dots in canvas
+### Ad blocking rules 
+
+you can find this in the web viewer, core plugin settings
+``` 
+https://easylist.to/easylist/easylist.txt
+https://easylist.to/easylist/easyprivacy.txt
+https://easylist-downloads.adblockplus.org/fanboy-annoyance.txt
+https://easylist-downloads.adblockplus.org/antiadblockfilters.txt
+```
 
 ### Themes 
 ****
