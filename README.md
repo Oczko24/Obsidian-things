@@ -11,7 +11,7 @@ You can find them all in [snippets](https://github.com/Oczko24/Obsidian_things/t
 - **Canvas dots** - removes visibility of background dots in canvas
 ### Ad blocking rules 
 
-you can find this in the web viewer, core plugin settings
+you can find this in the **web viewer's**, core plugin settings
 ``` 
 https://easylist.to/easylist/easylist.txt
 https://easylist.to/easylist/easyprivacy.txt
