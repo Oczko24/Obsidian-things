@@ -1,0 +1,7 @@
+/* you have it in settings but i just give a tool to turn it off via css */
+*,
+*::before,
+*::after {
+  transition-duration: 0s !important;
+  animation-duration: 0s !important;
+}
