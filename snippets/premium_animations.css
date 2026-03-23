@@ -1,0 +1,124 @@
+/* założenia: 
+nie używanie AI do tworzenia animacji bezpośrednio, 
+ponieważ nawet opus nie radzi sobie na ten moment z nimi. 
+Znaczy się robi dobre animacje ale czegoś tam nie ogarnia . */
+
+/* Wytłumaczenie na przyszłość w razie braku maintainingu z mojej strony 
+- Modal - Settings
+- Notice - Powiadomienie (z góry ekranu)
+- promptSlideUp - konsola odpalana przez ctrl + p
+*/
+
+
+/* test czy w ogóle snippet działa, ponieważ czasem obsidian nie łapie */
+.workspace-tabs .workspace-leaf {
+    background-color: aqua;
+}
+
+body {
+    --animationspeed: 500ms;
+}
+
+/* =================================== modal =================================== */
+body .modal {
+    animation: modal-open 350ms cubic-bezier(0.2, 0, 0, 1) forwards;
+}
+
+@keyframes modal-open {
+    from {
+        opacity: 0;
+        transform: scale(0.93) translateY(15px);
+    }
+
+    to {
+        opacity: 1;
+        transform: scale(1) translateY(0);
+    }
+}
+
+/* Modal Background Dim animiation */
+body .modal-bg {
+    animation: modal-bg-fade 350ms cubic-bezier(0.2, 0, 0, 1) forwards;
+}
+
+
+@keyframes modal-bg-fade {
+    from {
+        opacity: 0;
+    }
+
+    to {
+        opacity: 1;
+    }
+}
+
+/* niestety nie da sie zrobic animacji na wychodzenie z modala poniewaz po prostu DOM sie usuwa xd */
+
+/* =================================== notice in =================================== */
+/* notice czyli to takie powiadomienie */
+body .notice {
+    animation: tr-notice-in-desktop 1000ms cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+body.is-phone .notice {
+    animation: tr-notice-in-mobile 1000ms cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+@keyframes tr-notice-in-desktop {
+    from {
+        opacity: 0;
+        transform: translateX(40px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+@keyframes tr-notice-in-mobile {
+    from {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* =================================== promptSlideUp phone =================================== */
+/* prompt - taka kosola */
+body.is-phone .prompt {
+    animation: promptSlideUpPhone 1000ms cubic-bezier(0.2, 0.8, 0.2, 1);
+}
+
+@keyframes promptSlideUpPhone {
+    0% {
+        opacity: 0;
+        transform: translateY(100vh);
+    }
+
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* =================================== promptSlideUp desktop and tablet =================================== */
+body:not(.is-phone) .prompt {
+    animation: promptSlideUp 1000ms cubic-bezier(0.2, 0.8, 0.2, 1);
+}
+
+@keyframes promptSlideUp {
+    0% {
+        opacity: 0;
+        transform: translateY(200px);
+    }
+
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
