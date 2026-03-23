@@ -1,6 +1,17 @@
-.cm-html-embed td, .markdown-rendered td, .cm-html-embed th, .markdown-rendered th {
+/* 
+This code was created by Oczko24.
+For more details, visit:
+https://github.com/Oczko24/
+*/
+
+.cm-html-embed td,
+.markdown-rendered td,
+.cm-html-embed th,
+.markdown-rendered th {
     border: var(--table-border-width) solid transparent;
 }
-.cm-html-embed thead tr > th, .markdown-rendered thead tr > th {
+
+.cm-html-embed thead tr>th,
+.markdown-rendered thead tr>th {
     border-color: transparent;
 }

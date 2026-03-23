@@ -1,4 +1,10 @@
-.theme-dark, .theme-light {
+/* 
+This code was created by Oczko24.
+For more details, visit:
+https://github.com/Oczko24/
+*/
+.theme-dark,
+.theme-light {
     --text-muted: var(--color-accent-2);
     --titlebar-text-color: var(--color-accent);
     --color-accent-tr-20: hsla(var(--color-accent-hsl), 0.2);
@@ -23,13 +29,13 @@
     --h6-weight: 400;
 }
 
-.clickable-icon, 
-.workspace-tab-header-inner .workspace-tab-header-inner-icon, 
+.clickable-icon,
+.workspace-tab-header-inner .workspace-tab-header-inner-icon,
 .vertical-tab-header-group-title {
     color: var(--color-accent);
 }
 
-body:not(.is-grabbing) .tree-item-self.is-active:hover, 
+body:not(.is-grabbing) .tree-item-self.is-active:hover,
 .tree-item-self.is-active {
     background-color: var(--color-accent-tr-20);
 }

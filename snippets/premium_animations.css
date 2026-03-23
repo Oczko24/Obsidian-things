@@ -1,3 +1,9 @@
+/* 
+This code was created by Oczko24.
+For more details, visit:
+https://github.com/Oczko24/
+*/
+
 /* założenia: 
 nie używanie AI do tworzenia animacji bezpośrednio, 
 ponieważ nawet opus nie radzi sobie na ten moment z nimi. 
@@ -9,6 +15,7 @@ Znaczy się robi dobre animacje ale czegoś tam nie ogarnia . */
 - promptSlideUp - konsola odpalana przez ctrl + p
 */
 
+/* jednakże i tak to jest wstępny kod, do większego projektu */
 
 /* test czy w ogóle snippet działa, ponieważ czasem obsidian nie łapie */
 .workspace-tabs .workspace-leaf {
