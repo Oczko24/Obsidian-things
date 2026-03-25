@@ -1,9 +1,3 @@
-/* 
-This code was created by Oczko24.
-For more details, visit:
-https://github.com/Oczko24/
-*/
-
 /* założenia: 
 nie używanie AI do tworzenia animacji bezpośrednio, 
 ponieważ nawet opus nie radzi sobie na ten moment z nimi. 
@@ -13,13 +7,19 @@ Znaczy się robi dobre animacje ale czegoś tam nie ogarnia . */
 - Modal - Settings
 - Notice - Powiadomienie (z góry ekranu)
 - promptSlideUp - konsola odpalana przez ctrl + p
+
+- search ctrl + f - ekwiwalent F3
 */
 
-/* jednakże i tak to jest wstępny kod, do większego projektu */
+/* PLANY
+animacja:
+workspace-split mod-horizontal mod-sidedock mod-left-split
+*/
+
 
 /* test czy w ogóle snippet działa, ponieważ czasem obsidian nie łapie */
 .workspace-tabs .workspace-leaf {
-    background-color: aqua;
+    background-color: #FFA00020;
 }
 
 body {
@@ -128,4 +128,122 @@ body:not(.is-phone) .prompt {
         opacity: 1;
         transform: translateY(0);
     }
+}
+
+
+
+/* =================================== ctrl + f (search) i edytor =================================== */
+/* ten cm-editor bedzie sie dało animowac tylko przy pomocy JS bo to jest element statyczny. 
+tak samo nie da się animować go przy przełączaniu notatki bez JS, trzeba reloadować ten segment po prostu.
+Tak samo, nie da się zanimować wychodzenia z animacji stąd bo napewniej tu też jest usuwany DOM chodź nie patrzyłem */
+body .document-search-container
+
+/*,
+body .cm-editor */
+    {
+    animation: document-search-container-open 500ms cubic-bezier(0.2, 0, 0, 1) forwards;
+}
+
+@keyframes document-search-container-open {
+    from {
+        opacity: 0;
+        transform: translateY(-30px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* =================================== Animate Note Opening =================================== */
+/*
+Zakoszone bezpośrednio z obsidian-transparent. 
+Ogólnie działa słabo z uwagi na to, że DOM się nie aktualizuje czy coś takiego przy przełączaniu notatek via explorer.
+Działa tylko przy przełączaniu via manager kartowy
+   Smooth fade-in + slide-up animation when opening or switching notes
+   Uses existing --animationspeed variable
+*/
+/* Main note view - mod-root excludes side-panels, '>' excludes embeds */
+.workspace-split.mod-root .workspace-leaf-content[data-type="markdown"]>.view-content>.markdown-reading-view,
+.workspace-split.mod-root .workspace-leaf-content[data-type="markdown"]>.view-content>.markdown-source-view,
+/* mod-active re-fires animation when switching note from the left file panel */
+.workspace-leaf.mod-active .workspace-leaf-content[data-type="markdown"]>.view-content>.markdown-reading-view,
+.workspace-leaf.mod-active .workspace-leaf-content[data-type="markdown"]>.view-content>.markdown-source-view {
+    animation: tr-note-fade-in var(--animationspeed) cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+@keyframes tr-note-fade-in {
+    from {
+        opacity: 0;
+        transform: translateY(18px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+
+
+/* =================================== slower general animation speed but not works :) ===================================
+.workspace-tab-header,
+.workspace-tab-header-inner,
+.workspace-tab-container-before,
+.workspace-tab-container-after {
+    transition: background-color 1000ms cubic-bezier(0.16, 1, 0.3, 1);
+}
+    */
+
+/* =================================== tooltip animation =================================== */
+.tooltip {
+    animation: pop-down 400ms forwards;
+}
+
+/* =================================== menu animation =================================== */
+.menu {
+    animation: menu-animanion 400ms forwards;
+}
+
+@keyframes menu-animanion {
+    from {
+        opacity: 0;
+    }
+
+    to {
+        opacity: 1;
+    }
+}
+
+/*=================================== image hover =================================== */
+/* based on author: https://forum.obsidian.md/u/den/summary but i have recreated it */
+.markdown-source-view.mod-cm6 .cm-content>[contenteditable=false]:has(.image-embed),
+.markdown-source-view.mod-cm6 .cm-content>.image-embed,
+body .markdown-source-view.mod-cm6 .cm-content>*,
+.cm-embed-block,
+.cm-line,
+.image-embed,
+.image-wrapper {
+    contain: none !important;
+    overflow: visible !important;
+    clip-path: none !important;
+}
+
+body .image-embed img,
+.image-wrapper img {
+    /* Płynna tranzycja */
+    transition: transform 0.35s cubic-bezier(0.16, 1, 0.3, 1),
+        box-shadow 0.35s cubic-bezier(0.16, 1, 0.3, 1) !important;
+    position: relative;
+    z-index: 10;
+    transform-origin: center center;
+}
+
+body .image-embed img:hover,
+.image-wrapper img:hover {
+    z-index: 99999;
+    transform: scale(1.5);
+    box-shadow: 0 20px 60px rgba(0, 0, 0, 0.6) !important;
+    cursor: zoom-in;
 }
