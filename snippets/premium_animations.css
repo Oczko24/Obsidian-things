@@ -22,8 +22,10 @@ workspace-split mod-horizontal mod-sidedock mod-left-split
     background-color: #FFA00020;
 }
 
+
 body {
     --animationspeed: 500ms;
+
 }
 
 /* =================================== modal =================================== */
@@ -269,4 +271,18 @@ body .image-embed img:hover,
         opacity: 1;
         transform: translateY(0);
     }
+}
+
+/* =================================== uniesienie po najechaniu =================================== */
+/* tak szczerze jestem dumny z tego kodu */
+.nav-file-title,
+.nav-folder-title {
+    display: flex !important;
+    transition: transform 1s cubic-bezier(0.15, 1, 0.3, 1) !important;
+    transform: translateX(0);
+}
+
+.nav-file-title:hover,
+.nav-folder-title:hover {
+    transform: translateX(25px) !important;
 }
