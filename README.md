@@ -6,7 +6,7 @@ a repository of all my tweaks and snippets to obsidian
 
 ****
 
-You can find them all in [snippets](https://github.com/Oczko24/Obsidian_things/tree/main/css_snippets) folder
+You can find them all in [snippets](https://github.com/Oczko24/Obsidian_things/tree/main/snippets) folder
 
 - **Accent everywhere** - makes accent in every line or so
 - **Canvas dots** - removes visibility of background dots in canvas
