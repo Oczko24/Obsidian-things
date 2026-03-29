@@ -1,6 +1,6 @@
 # Obsidian_things
 
-a repository of all my tweaks to obsidian
+a repository of all my tweaks and snippets to obsidian
 
 ### Snippets
 
