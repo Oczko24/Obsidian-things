@@ -13,6 +13,7 @@ You can find them all in [snippets](https://github.com/Oczko24/Obsidian_things/t
 - **Premium animations** - animate everything that is possible in obsidian
 - **Transparent tables** - makes tables tranaparent
 - **Turn off animations** - remove animations via css beacause why not
+- **Vault** - change colors of some specific folders and fixes for homepage
 
 ### Ad blocking rules
 
