@@ -1,0 +1,31 @@
+/* color only folder named xyz */
+.tree-item-self.nav-folder-title[data-path*="xyz"] {
+    background-color: #FFA00020 !important;
+    color: #ffffff !important;
+}
+/* color folder named xyza and their whole tree (notes etc) */
+.tree-item-self[data-path*="xyza" i] {
+    background-color: #FFA00020 !important;
+    color: white !important;
+}
+/* will have to traslate it but to make everything below works you have to paste in your note cssclasses in properties named Homepage lol */
+/* Ukrycie obramowania nagłówków tabel w notatce "Homepage" */
+.Homepage .markdown-rendered thead tr > th, 
+.Homepage .cm-html-embed thead tr > th {
+    border-color: transparent;
+}
+
+/* Ukrycie obramowania wszystkich komórek tabel w notatce "Homepage" */
+.Homepage .markdown-rendered th, 
+.Homepage .markdown-rendered td, 
+.Homepage .cm-html-embed th, 
+.Homepage .cm-html-embed td {
+    border-color: transparent;
+}
+
+.Homepage .markdown-embed-link, 
+.Homepage .file-embed-link {
+    color: transparent;
+    }
+
+
